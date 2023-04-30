@@ -1,2 +1,40 @@
-# autogit
-Python script to clone/update all projects from git to the local device
+# AutoGit
+
+This Python script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.
+
+## Dependencies
+
+- [GitPython](https://gitpython.readthedocs.io/en/stable/)
+- [Requests](https://docs.python-requests.org/en/master/)
+
+You can install these dependencies using the following command:
+
+```bash
+pip install GitPython requests
+```
+
+## Setup
+
+1. Generate a GitHub personal access token:
+    - Go to https://github.com/settings/tokens
+    - Click "Generate new token"
+    - Give your token a name and check the necessary scopes, e.g., `repo`, `user`
+    - Click "Generate token" and copy the generated token
+
+2. Replace the placeholder values in the script:
+    - Replace `'your-personal-access-token'` with your generated GitHub personal access token
+    - Replace `'path-to-destination-directory'` with the path to the directory where you want to clone or update the repositories
+
+## Usage
+
+Simply run the script:
+
+```bash
+python autogit.py
+```
+
+The script will clone or update all repositories that the authenticated user has access to and organize them into separate folders based on the owner (organization or user) in the destination directory.
+
+## License
+
+This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
