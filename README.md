@@ -1,8 +1,23 @@
 # AutoGit
 
-This Node.js script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.
+This Script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.
 
-## Dependencies
+## Python Version
+
+### Dependencies
+
+- [GitPython](https://gitpython.readthedocs.io/en/stable/)
+- [Requests](https://docs.python-requests.org/en/master/)
+
+You can install these dependencies using the following command:
+
+```bash
+pip install GitPython requests
+```
+
+## Node.js Version
+
+### Dependencies
 
 - [Node.js](https://nodejs.org/en/download)
 
@@ -27,6 +42,14 @@ npm install
 ## Usage
 
 Simply run the script:
+
+### Python Version
+
+```bash
+python autogit.py
+```
+
+### Node.js Version
 
 ```bash
 npm start
