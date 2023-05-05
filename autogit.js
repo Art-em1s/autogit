@@ -34,13 +34,14 @@ async function get_all_user_repos(token) {
 }
 
 async function clone_or_pull_repos(token, dest_dir) {
+	console.time('Execution time: ');
     const repos = await get_all_user_repos(token);
 
     if (!fs.existsSync(dest_dir)) {
         fs.mkdirSync(dest_dir, { recursive: true });
     }
 
-    for (const repo of repos) {
+	const finishedRepos = await Promise.all(repos.map(async (repo) => {
         const repo_url = repo.clone_url;
         const repo_name = repo.name;
         const owner_name = repo.owner.login;
@@ -63,11 +64,18 @@ async function clone_or_pull_repos(token, dest_dir) {
                 await localRepo.pull();
             } catch (error) {
                 console.log(`Error updating ${repo_name}: ${error}`);
+
+				return 0;
             }
         }
-    }
 
-	console.log('Finished updating or cloning repositories!');
+		return 1;
+    }));
+
+	const finishedReposCount = finishedRepos?.filter((repo) => repo === 1).length;
+
+	console.log(`Finished updating or cloning ${finishedReposCount} repositories!`);
+	console.timeEnd('Execution time: ');
 }
 
 // Replace these with the appropriate values

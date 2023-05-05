@@ -1,6 +1,8 @@
 import requests
 import os
 from git import Repo
+import time
+
 
 
 def get_all_user_repos(token):
@@ -26,6 +28,7 @@ def get_all_user_repos(token):
 
 
 def clone_or_pull_repos(token, dest_dir):
+    start_time = time.time()
     repos = get_all_user_repos(token)
 
     if not os.path.exists(dest_dir):
@@ -51,6 +54,13 @@ def clone_or_pull_repos(token, dest_dir):
                 local_repo.git.pull()
             except Exception as e:
                 print(f"Error updating {repo_name}: {e}")
+
+    end_time = time.time()
+    total_time = end_time - start_time
+    minutes, seconds = divmod(total_time, 60)
+    seconds = round(seconds, 3)
+
+    print("Execution time: {:d}:{:06.3f}".format(int(minutes), seconds))
 
 
 # Replace these with the appropriate values
