@@ -1,16 +1,15 @@
 # AutoGit
 
-This Python script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.
+This Node.js script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.
 
 ## Dependencies
 
-- [GitPython](https://gitpython.readthedocs.io/en/stable/)
-- [Requests](https://docs.python-requests.org/en/master/)
+- [Node.js](https://nodejs.org/en/download)
 
 You can install these dependencies using the following command:
 
 ```bash
-pip install GitPython requests
+npm install
 ```
 
 ## Setup
@@ -30,7 +29,7 @@ pip install GitPython requests
 Simply run the script:
 
 ```bash
-python autogit.py
+npm start
 ```
 
 The script will clone or update all repositories that the authenticated user has access to and organize them into separate folders based on the owner (organization or user) in the destination directory.
