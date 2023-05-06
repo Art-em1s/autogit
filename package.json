@@ -1,0 +1,18 @@
+{
+  "name": "autogit",
+  "version": "1.0.0",
+  "description": "This Node.js script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.",
+  "main": "autogit.js",
+  "scripts": {
+    "start": "node autogit.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.4.0",
+    "fs": "^0.0.1-security",
+    "path": "^0.12.7",
+    "simple-git": "^3.18.0"
+  }
+}
