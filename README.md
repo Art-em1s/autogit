@@ -1,6 +1,6 @@
 # AutoGit
 
-This Script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.
+This script clones or updates all repositories that the authenticated user has access to, including public, private, and organization repositories. The repositories are organized into separate folders based on the owner (organization or user) in the destination directory.
 
 ## Python Version
 
